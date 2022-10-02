@@ -1,4 +1,4 @@
-package main.creational.factoryMethod;
+package main.creational.factoryMethod.tool;
 
 public class Program {
     public static void main(String[] args) {
