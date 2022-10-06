@@ -1,0 +1,37 @@
+package main.behavioral.observer.site;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class JavaDeveloperJobSite implements Observed{
+    List<String> vacancies = new ArrayList<>();
+
+    List<Observer> subscribes = new ArrayList<>();
+
+    public void addVacancy(String vacancy) {
+        this.vacancies.add(vacancy);
+        notifyObservers();
+    }
+
+    public void removeVacany(String vacancy) {
+        this.vacancies.remove(vacancy);
+        notifyObservers();
+    }
+
+    @Override
+    public void addObserver(Observer observer) {
+        this.subscribes.add(observer);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        this.subscribes.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        for(Observer observer:subscribes) {
+            observer.handleEvent(this.vacancies);
+        }
+    }
+}
