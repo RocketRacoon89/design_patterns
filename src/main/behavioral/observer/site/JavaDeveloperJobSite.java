@@ -5,7 +5,6 @@ import java.util.List;
 
 public class JavaDeveloperJobSite implements Observed{
     List<String> vacancies = new ArrayList<>();
-
     List<Observer> subscribes = new ArrayList<>();
 
     public void addVacancy(String vacancy) {
